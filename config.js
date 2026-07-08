@@ -32,5 +32,11 @@ window.WORKDESK_CONFIG = {
   /* ⑤ 방문자 측정(Google 애널리틱스 GA4) — analytics.google.com에서
      무료 속성 생성 후 측정 ID를 붙여넣으면 방문 통계가 켜집니다.
      예: "G-XXXXXXXXXX" */
-  ANALYTICS_ID: ""
+  ANALYTICS_ID: "",
+
+  /* ⑥ 개인정보처리방침 연락처 (선택) — 입력하면 privacy 페이지의
+     보호책임자·문의처가 자동으로 채워집니다. 비워두면 기본 문구가 표시됩니다.
+     ※ 애드센스 심사 전에는 이메일을 채워두는 것을 권장합니다. */
+  CONTACT_NAME: "",   /* 예: "홍길동" */
+  CONTACT_EMAIL: ""   /* 예: "hello@workdesk.kr" */
 };
