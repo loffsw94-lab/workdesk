@@ -18,7 +18,7 @@ window.WORKDESK_CONFIG = {
   /* ② 외주 의뢰 폼 — Formspree(formspree.io) 무료 가입 후
      발급받은 폼 주소를 붙여넣으세요. 접수 내용이 이메일로 도착합니다.
      예: "https://formspree.io/f/abcdwxyz" */
-  FORM_ENDPOINT: "",
+  FORM_ENDPOINT: "https://formspree.io/f/mrewvare",
 
   /* ③ 네이버 뉴스 자동 수집 — 여기가 아니라 Vercel 환경변수에
      NAVER_ID / NAVER_SECRET 두 개를 넣으면 자동으로 켜집니다.
