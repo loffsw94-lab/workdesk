@@ -32,7 +32,7 @@ window.WORKDESK_CONFIG = {
   /* ⑤ 방문자 측정(Google 애널리틱스 GA4) — analytics.google.com에서
      무료 속성 생성 후 측정 ID를 붙여넣으면 방문 통계가 켜집니다.
      예: "G-XXXXXXXXXX" */
-  ANALYTICS_ID: "",
+  ANALYTICS_ID: "G-ZT1WVWEXEL",
 
   /* ⑥ 개인정보처리방침 연락처 (선택) — 입력하면 privacy 페이지의
      보호책임자·문의처가 자동으로 채워집니다. 비워두면 기본 문구가 표시됩니다.
