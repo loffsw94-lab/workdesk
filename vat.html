@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가세 계산기 — 공급가액·합계금액 자동 계산 (2026) | 워크데스크</title>
+<meta name="description" content="부가세 10% 자동 계산기. 공급가액에서 합계금액을, 합계금액에서 공급가액과 세액을 즉시 분리합니다. 1원 오차 없는 정확한 계산, 무료.">
+<link rel="canonical" href="/vat">
+<meta property="og:type" content="website">
+<meta property="og:title" content="부가세 계산기 — 공급가액·합계금액 자동 계산">
+<meta property="og:description" content="부가세 10%, 3초 만에 계산하세요. 무료.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"부가세는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"일반과세 기준 부가세는 공급가액의 10%입니다. 공급가액이 100만 원이면 부가세는 10만 원, 합계금액은 110만 원이 됩니다. 반대로 합계금액만 알 때는 합계를 1.1로 나누면 공급가액이 나옵니다."}},
+{"@type":"Question","name":"합계금액에서 공급가액을 나누면 1원이 안 맞아요.","acceptedAnswer":{"@type":"Answer","text":"합계금액을 1.1로 나누면 소수점이 생겨 반올림 방식에 따라 1원 차이가 날 수 있습니다. 공급가액을 먼저 반올림으로 확정하고, 세액은 합계금액에서 공급가액을 빼서 구하면 오차가 사라집니다. 이 계산기는 그 방식을 사용합니다."}},
+{"@type":"Question","name":"간이과세자도 10%인가요?","acceptedAnswer":{"@type":"Answer","text":"간이과세자는 업종별 부가가치율을 곱한 낮은 세율이 적용되어 실제 납부 세액이 다릅니다. 이 계산기는 일반과세(10%) 기준이므로 간이과세자는 홈택스 모의계산을 함께 확인하세요."}}
+]}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="index.html"><span class="logo-mark">₩=</span><span>워크데스크<small>WORKDESK</small></span></a>
+    <nav class="nav-links"><a href="index.html">전체 도구</a><a href="index.html#feed">콘텐츠</a><a href="index.html#hire" class="nav-cta">외주 의뢰</a></nav>
+  </div>
+</header>
+
+<section class="landing-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">워크데스크</a> › 부가세 계산기</span>
+    <h1>부가세 계산기</h1>
+    <p>공급가액 → 합계금액, 합계금액 → 공급가액·세액 분리까지. 홈택스에 그대로 옮겨 적을 수 있는 1원 오차 없는 계산 결과를 영수증으로 발행해 드립니다.</p>
+  </div>
+</section>
+
+<section class="section-tight tools-bg">
+  <div class="wrap"><div data-calc="vat"></div></div>
+</section>
+
+<div class="wrap" style="padding:36px 24px 0">
+  <div class="ad-slot ad-banner" style="max-width:940px">AD · 728×90<span class="ad-note">config.js에 애드센스 ID를 넣으면 실제 광고로 바뀝니다</span></div>
+</div>
+
+<section class="section">
+  <div class="wrap seo-body">
+    <h2>부가세 계산, 이렇게 하면 됩니다</h2>
+    <p>부가가치세(VAT)는 일반과세 기준 <mark>공급가액의 10%</mark>입니다. 견적서나 계약서에 적힌 금액이 "부가세 별도"라면 그 금액이 공급가액이고, 여기에 10%를 더한 것이 실제 청구할 합계금액입니다. 반대로 카드 매출처럼 합계금액만 알고 있다면 1.1로 나누어 공급가액을 구합니다.</p>
+    <ol>
+      <li><b>공급가액 → 합계</b>: 공급가액 × 1.1 = 합계금액 (예: 100만 원 → 110만 원)</li>
+      <li><b>합계 → 공급가액</b>: 합계금액 ÷ 1.1 = 공급가액 (예: 110만 원 → 100만 원)</li>
+      <li><b>세액</b>: 합계금액 − 공급가액 = 부가세</li>
+    </ol>
+    <p>주의할 점은 반올림 순서입니다. 합계를 1.1로 나누면 소수점이 생기는데, 공급가액과 세액을 각각 따로 반올림하면 둘을 더했을 때 합계와 1원이 어긋날 수 있습니다. 이 계산기는 공급가액을 먼저 확정하고 세액을 차감 방식으로 구해 <b>어떤 금액이든 오차가 0</b>이 되도록 설계되어 있습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>부가세 신고는 언제 하나요?</summary><div class="a">일반과세 개인사업자는 1년에 2회(1월, 7월), 법인은 분기별로 신고·납부합니다. 간이과세자는 1년에 1회(1월)입니다. 매출이 발생할 때마다 부가세 몫(약 10/110)을 따로 떼어두면 신고 기간에 부담이 없습니다.</div></details>
+      <details><summary>간이과세자도 이 계산기를 쓸 수 있나요?</summary><div class="a">간이과세자는 업종별 부가가치율이 적용되어 실제 납부 세액이 10%보다 낮습니다. 이 계산기는 일반과세(10%) 기준이므로, 간이과세자는 세금계산서 발행 가능 여부와 함께 홈택스 모의계산을 확인하세요.</div></details>
+      <details><summary>면세 품목은 어떻게 하나요?</summary><div class="a">미가공 식료품, 도서, 의료·교육 용역 등 면세 품목은 부가세가 붙지 않으며 세금계산서가 아닌 계산서를 발행합니다. 거래 품목이 면세인지 과세인지 먼저 확인하세요.</div></details>
+    </div>
+
+    <h2>금액별 부가세 바로 보기</h2>
+    <p>자주 검색되는 금액의 부가세를 미리 계산해 두었습니다.</p>
+    <div class="chips-inline">
+      <a href="v/10.html">10만 원</a><a href="v/50.html">50만 원</a><a href="v/100.html">100만 원</a><a href="v/200.html">200만 원</a><a href="v/300.html">300만 원</a><a href="v/500.html">500만 원</a><a href="v/1000.html">1,000만 원</a><a href="v/3000.html">3,000만 원</a><a href="v/5000.html">5,000만 원</a><a href="v/10000.html">1억 원</a>
+    </div>
+    <h2>함께 쓰면 좋은 계산기</h2>
+    <div class="related">
+      <a href="invoice.html">세금계산서 도우미</a>
+      <a href="salary.html">연봉 실수령액</a>
+      <a href="loan.html">대출 이자</a>
+      <a href="fx.html">환율 계산</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b>워크데스크</b>일하는 사람의 계산기 허브 · 계산 결과는 참고용입니다.</div>
+    <div><b>바로가기</b><a href="index.html">전체 도구</a> · <a href="privacy.html">개인정보처리방침</a></div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

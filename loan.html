@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대출 이자 계산기 — 원리금균등·원금균등·만기일시 월 상환금 (2026) | 워크데스크</title>
+<meta name="description" content="대출 이자 계산기. 원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 비교합니다. 주택담보대출·신용대출·사업자대출 무료 계산.">
+<link rel="canonical" href="/loan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="대출 이자 계산기 — 월 납입금과 총 이자 한눈에">
+<meta property="og:description" content="상환 방식에 따라 총 이자가 얼마나 달라지는지 3초 만에 비교하세요.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"원리금균등과 원금균등의 차이는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"원리금균등은 매달 같은 금액을 내는 방식으로 초기 부담이 일정하지만 총 이자가 더 많습니다. 원금균등은 매달 원금을 같은 금액씩 갚아 첫 달 부담이 크지만 갈수록 줄고 총 이자가 더 적습니다."}},
+{"@type":"Question","name":"만기일시상환은 언제 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"매달 이자만 내고 만기에 원금을 한 번에 갚는 방식으로, 월 부담이 가장 낮지만 총 이자는 가장 많습니다. 단기 자금 운용이나 곧 목돈이 들어올 예정일 때 주로 사용합니다."}},
+{"@type":"Question","name":"대출 갈아타기(대환)는 언제 이득인가요?","acceptedAnswer":{"@type":"Answer","text":"낮아진 금리로 아끼는 월 이자 차액이 중도상환수수료를 회수하는 데 걸리는 기간을 계산해야 합니다. 남은 상환 기간이 그보다 짧으면 갈아타지 않는 편이 이득일 수 있습니다."}}
+]}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="index.html"><span class="logo-mark">₩=</span><span>워크데스크<small>WORKDESK</small></span></a>
+    <nav class="nav-links"><a href="index.html">전체 도구</a><a href="index.html#feed">콘텐츠</a><a href="index.html#hire" class="nav-cta">외주 의뢰</a></nav>
+  </div>
+</header>
+
+<section class="landing-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">워크데스크</a> › 대출 이자 계산기</span>
+    <h1>대출 이자 계산기</h1>
+    <p>원리금균등·원금균등·만기일시 — 상환 방식에 따라 총 이자가 수백만 원까지 달라집니다. 조건을 넣고 방식별로 비교해 보세요.</p>
+  </div>
+</section>
+
+<section class="section-tight tools-bg">
+  <div class="wrap"><div data-calc="loan"></div></div>
+</section>
+
+<div class="wrap" style="padding:36px 24px 0">
+  <div class="ad-slot ad-banner" style="max-width:940px">AD · 728×90<span class="ad-note">config.js에 애드센스 ID를 넣으면 실제 광고로 바뀝니다</span></div>
+</div>
+
+<section class="section">
+  <div class="wrap seo-body">
+    <h2>상환 방식 3가지, 뭐가 다를까</h2>
+    <p>같은 금액·같은 금리라도 <mark>상환 방식에 따라 총 이자가 크게 달라집니다.</mark> 세 방식의 성격을 알고 내 현금 흐름에 맞는 것을 골라야 합니다.</p>
+    <ul>
+      <li><b>원리금균등</b>: 매달 내는 돈이 똑같습니다. 가계 예산 잡기 편하지만, 초반에는 대부분이 이자라 총 이자가 가장 흔한 선택지 중에서는 중간 이상입니다. 주택담보대출의 기본형.</li>
+      <li><b>원금균등</b>: 매달 원금을 동일하게 갚습니다. 첫 달 부담이 가장 크지만 매달 줄어들고, 총 이자는 세 방식 중 가장 적습니다.</li>
+      <li><b>만기일시</b>: 매달 이자만 내고 원금은 만기에 한 번에. 월 부담 최소, 총 이자 최대. 전세자금·단기 사업자금에 주로 쓰입니다.</li>
+    </ul>
+    <p>대출을 갈아탈 때는 금리만 보지 말고 <b>중도상환수수료 회수 기간</b>을 계산하세요. 이 계산기로 현재 조건과 새 조건의 총 이자를 각각 구해 비교하면 됩니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>금리 0.5%p 차이가 실제로 얼마나 큰가요?</summary><div class="a">1억 원을 20년 원리금균등으로 빌릴 때 금리가 0.5%p 낮아지면 총 이자가 수백만 원 단위로 줄어듭니다. 정확한 차액은 위 계산기에 두 금리를 각각 넣어 총 이자를 비교해 보세요.</div></details>
+      <details><summary>거치기간이 있으면 어떻게 되나요?</summary><div class="a">거치기간에는 이자만 내다가 이후 원(리)금 상환이 시작됩니다. 이 계산기는 거치 없이 즉시 상환하는 기준이므로, 거치형 대출은 은행 상담 시 상환 스케줄표를 요청해 확인하세요.</div></details>
+      <details><summary>DSR이 뭔가요?</summary><div class="a">총부채원리금상환비율(DSR)은 연 소득 대비 모든 대출의 연간 원리금 상환액 비율입니다. 대출 한도를 좌우하므로, 월 납입금을 계산해 연 소득과 비교해 보면 대출 가능 규모를 가늠할 수 있습니다.</div></details>
+    </div>
+
+    <h2>대출 조건별 월 상환금 바로 보기</h2>
+    <p>자주 찾는 대출 금액·기간 조합의 금리별 상환표를 미리 만들어 두었습니다.</p>
+    <div class="chips-inline">
+      <a href="l/5000-20.html">5천만 · 20년</a><a href="l/10000-10.html">1억 · 10년</a><a href="l/10000-20.html">1억 · 20년</a><a href="l/10000-30.html">1억 · 30년</a><a href="l/20000-20.html">2억 · 20년</a><a href="l/20000-30.html">2억 · 30년</a><a href="l/30000-30.html">3억 · 30년</a><a href="l/50000-30.html">5억 · 30년</a>
+    </div>
+    <h2>함께 쓰면 좋은 계산기</h2>
+    <div class="related">
+      <a href="salary.html">연봉 실수령액</a>
+      <a href="vat.html">부가세</a>
+      <a href="fx.html">환율 계산</a>
+      <a href="invoice.html">세금계산서</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b>워크데스크</b>일하는 사람의 계산기 허브 · 계산 결과는 참고용입니다.</div>
+    <div><b>바로가기</b><a href="index.html">전체 도구</a> · <a href="privacy.html">개인정보처리방침</a></div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>워크데스크 — 부가세·연봉 실수령액·대출 이자 계산기 | 일하는 사람의 비즈니스 허브</title>
+<meta name="description" content="부가세 계산기, 연봉 실수령액 계산기, 대출 이자 계산기, 세금계산서 도우미까지 무료. 직장인·소상공인을 위한 업무 꿀팁과 콘텐츠, 외주 의뢰를 한 곳에서.">
+<link rel="canonical" href="/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="워크데스크 — 일하는 사람의 계산기 허브">
+<meta property="og:description" content="부가세·연봉 실수령액·대출 이자, 3초 만에 계산하고 가세요.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"워크데스크","applicationCategory":"FinanceApplication","description":"부가세·연봉 실수령액·대출 이자·세금계산서 무료 계산기","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="config.js"></script>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="index.html"><span class="logo-mark">₩=</span><span>워크데스크<small>WORKDESK</small></span></a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="#tools">계산기 도구</a>
+      <a href="#feed">콘텐츠</a>
+      <a href="#trust">이용 현황</a>
+      <a href="#hire" class="nav-cta">외주 의뢰</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <span class="hero-kicker">FREE BUSINESS TOOLKIT · 무료 비즈니스 계산기</span>
+    <h1>일하다 막히는 계산,<br><em>3초 만에</em> 끝내고 가세요.</h1>
+    <p>부가세·연봉 실수령액·대출 이자·세금계산서까지. 직장인과 사장님을 위한 무료 계산기와 매일 새로운 콘텐츠, 필요하면 외주 의뢰까지 — 전부 여기에서.</p>
+    <div class="searchbox" role="search">
+      <span class="icon" aria-hidden="true">⌕</span>
+      <input id="siteSearch" type="search" placeholder="무슨 도구가 필요하세요? 예: 부가세, 실수령액, 대출…" aria-label="사이트 내 검색">
+      <button onclick="runSearch()">검색</button>
+    </div>
+    <div class="hero-chips">
+      <a href="vat.html"># 부가세 계산기</a>
+      <a href="salary.html"># 연봉 실수령액</a>
+      <a href="loan.html"># 대출 이자</a>
+      <a href="invoice.html"># 세금계산서</a>
+      <a href="fx.html"># 환율 계산</a>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
+</section>
+
+<section class="section tools-bg" id="tools">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Tools · 도구</span>
+      <h2>매일 쓰는 비즈니스 계산기</h2>
+      <p class="sub">계산 결과는 영수증처럼 깔끔하게 발행됩니다. 즐겨찾기 해두고 필요할 때마다 꺼내 쓰세요.</p>
+    </div>
+    <div class="tool-tabs reveal" role="tablist" aria-label="계산기 선택">
+      <button class="on" data-tool="vat" onclick="showTool('vat')">부가세 계산기</button>
+      <button data-tool="salary" onclick="showTool('salary')">연봉 실수령액</button>
+      <button data-tool="convert" onclick="showTool('convert')">환율 · 평수 변환</button>
+      <button data-tool="loan" onclick="showTool('loan')">대출 이자 계산기</button>
+      <button data-tool="invoice" onclick="showTool('invoice')">세금계산서 도우미</button>
+    </div>
+    <div class="tool-panel on reveal" id="tool-vat" data-calc="vat"></div>
+    <div class="tool-panel" id="tool-salary" data-calc="salary"></div>
+    <div class="tool-panel" id="tool-convert" data-calc="convert"></div>
+    <div class="tool-panel" id="tool-loan" data-calc="loan"></div>
+    <div class="tool-panel" id="tool-invoice" data-calc="invoice"></div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:44px 24px 0">
+  <div class="ad-slot ad-banner reveal" style="max-width:940px">
+    AD · 728×90 리더보드
+    <span class="ad-note">config.js에 애드센스 ID를 넣으면 실제 광고로 바뀝니다</span>
+  </div>
+</div>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:22px">
+      <span class="sec-eyebrow">Quick · 바로 보기</span>
+      <h2>자주 찾는 계산, 미리 해뒀어요</h2>
+    </div>
+    <div class="chips-inline reveal">
+      <a href="s/3000.html">연봉 3,000 실수령액</a><a href="s/4000.html">연봉 4,000 실수령액</a><a href="s/5000.html">연봉 5,000 실수령액</a><a href="w/300.html">월급 300 실수령액</a><a href="f/300.html">프리랜서 3.3% 계산</a><a href="v/100.html">100만 원 부가세</a><a href="v/1000.html">1,000만 원 부가세</a><a href="l/10000-30.html">1억 30년 대출 이자</a><a href="l/30000-30.html">3억 30년 대출 이자</a><a href="a/84m2.html">84㎡ 몇 평</a><a href="a/59m2.html">59㎡ 몇 평</a><a href="rates.html">2026 4대 보험 요율표</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="feed">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Feed · 콘텐츠</span>
+      <h2>일하다 쉬어가는 콘텐츠</h2>
+      <p class="sub">꿀팁부터 뉴스·스포츠·연예·유머까지. 뉴스는 API 연동 시 자동으로 채워집니다.</p>
+    </div>
+    <div class="feed-tabs reveal" role="tablist" aria-label="콘텐츠 카테고리">
+      <button class="on" data-cat="all" onclick="feedFilter('all',this)">전체</button>
+      <button data-cat="tip" onclick="feedFilter('tip',this)">💡 업무 꿀팁</button>
+      <button data-cat="news" onclick="feedFilter('news',this)">📰 뉴스</button>
+      <button data-cat="sports" onclick="feedFilter('sports',this)">⚽ 스포츠</button>
+      <button data-cat="enter" onclick="feedFilter('enter',this)">🎬 연예</button>
+      <button data-cat="fun" onclick="feedFilter('fun',this)">😆 유머</button>
+    </div>
+    <div class="feed-grid" id="feedGrid"></div>
+    <div class="feed-sentinel" id="feedSentinel"></div>
+  </div>
+</section>
+
+<section class="section" id="trust" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Trust · 이용 현황</span>
+      <h2>숫자로 보는 워크데스크</h2>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust"><div class="num" data-count="128400">0</div><div class="lbl">누적 계산 횟수</div></div>
+      <div class="trust"><div class="num" data-count="8930">0</div><div class="lbl">월간 방문자</div></div>
+      <div class="trust"><div class="num" data-count="214">0</div><div class="lbl">외주 매칭 건수</div></div>
+      <div class="trust"><div class="num" data-count="97" data-suffix="%">0</div><div class="lbl">재방문 의향</div></div>
+    </div>
+    <div class="quotes reveal">
+      <div class="quote"><p>세금계산서 발행 전에 항상 여기서 금액부터 확인해요. 홈택스에서 실수한 적이 없어졌습니다.</p><div class="who">온라인 쇼핑몰 운영 · 김 대표</div></div>
+      <div class="quote"><p>연봉 협상 시즌마다 실수령액 계산기 켜놓고 삽니다. 회사 사람들한테도 다 공유했어요.</p><div class="who">IT 기업 6년 차 · 박 과장</div></div>
+      <div class="quote"><p>계산기 쓰러 왔다가 외주 의뢰까지 맡겼는데 진행이 빨라서 놀랐습니다. 다음 프로젝트도 여기로.</p><div class="who">스타트업 CEO · 이 대표</div></div>
+    </div>
+    <p class="sample-note" style="margin-top:18px">✏️ 위 수치와 후기는 예시입니다. 실제 데이터로 교체하세요.</p>
+  </div>
+</section>
+
+<section class="section hire-bg" id="hire">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">Request · 외주 의뢰</span>
+      <h2>일 맡길 곳 찾고 계셨나요?</h2>
+      <p class="sub">디자인·개발·글쓰기 프로젝트를 간단히 남겨주시면 24시간 안에 회신드립니다.</p>
+    </div>
+    <div class="hire-grid">
+      <div class="hire-points reveal">
+        <div class="hpoint"><div class="ico">⚡</div><div><b>24시간 내 1차 회신</b><p>영업일 기준, 담당자가 직접 검토 후 연락드립니다.</p></div></div>
+        <div class="hpoint"><div class="ico">📋</div><div><b>견적은 무료, 부담은 제로</b><p>상담과 견적 산출까지 비용이 들지 않습니다.</p></div></div>
+        <div class="hpoint"><div class="ico">🧾</div><div><b>세금계산서 발행 가능</b><p>법인·개인사업자 모두 증빙 처리 가능합니다.</p></div></div>
+        <div class="hpoint"><div class="ico">🔒</div><div><b>보안 서약 후 진행</b><p>요청 시 NDA를 먼저 체결하고 상세 내용을 받습니다.</p></div></div>
+      </div>
+      <div class="hire-form reveal">
+        <h3>의뢰 내용 남기기</h3>
+        <div class="field"><label>분야 선택</label>
+          <div class="cat-pick" id="hireCat">
+            <button class="on" data-v="디자인" onclick="segPick(this)">🎨 디자인</button>
+            <button data-v="개발" onclick="segPick(this)">💻 개발</button>
+            <button data-v="글쓰기" onclick="segPick(this)">✍️ 글쓰기</button>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="hName">이름 / 회사명</label><input id="hName" placeholder="홍길동 / (주)워크"></div>
+          <div class="field"><label for="hContact">이메일 또는 연락처</label><input id="hContact" placeholder="hello@work.co.kr"></div>
+        </div>
+        <div class="field"><label for="hBudget">예상 예산</label>
+          <select id="hBudget">
+            <option>미정 (상담 후 결정)</option>
+            <option>100만 원 미만</option>
+            <option>100 ~ 500만 원</option>
+            <option>500 ~ 1,000만 원</option>
+            <option>1,000만 원 이상</option>
+          </select>
+        </div>
+        <div class="field"><label for="hDesc">프로젝트 설명</label><textarea id="hDesc" placeholder="어떤 작업이 필요한지, 일정은 언제까지인지 편하게 적어주세요."></textarea></div>
+        <button class="submit-btn" onclick="submitHire()">의뢰 접수하기</button>
+        <p class="tool-note" style="margin-top:12px">config.js에 Formspree 주소를 넣으면 접수 내용이 이메일로 도착합니다. (미설정 시 데모 접수)</p>
+        <div class="stamp-overlay" id="stampOverlay" role="status">
+          <div class="stamp-inner">
+            <div class="stamp-seal">접수<br>완료</div>
+            <p id="stampMsg"></p>
+            <button class="again" onclick="resetHire()">새 의뢰 작성하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:48px 24px">
+  <div class="ad-slot ad-banner reveal" style="max-width:940px">
+    AD · 970×90 대형 리더보드
+    <span class="ad-note">config.js에 애드센스 ID를 넣으면 실제 광고로 바뀝니다</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <b>워크데스크 <span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:#7FA595">WORKDESK</span></b>
+      일하는 사람의 계산기 · 콘텐츠 · 외주 허브<br>
+      © 2026 Workdesk. 계산 결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <div>
+      <b>계산기 바로가기</b>
+      <a href="vat.html">부가세</a> · <a href="salary.html">연봉 실수령액</a> · <a href="loan.html">대출 이자</a> · <a href="fx.html">환율</a> · <a href="invoice.html">세금계산서</a> · <a href="rates.html">2026 요율표</a>
+    </div>
+    <div>
+      <b>안내</b>
+      <a href="privacy.html">개인정보처리방침</a><br>
+      광고·제휴: ad@workdesk.example
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

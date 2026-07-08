@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>환율 계산기 — 달러·엔화·유로 실시간 원화 환산 + 평수 변환 | 워크데스크</title>
+<meta name="description" content="실시간 환율 계산기. 미국 달러(USD), 일본 엔(JPY), 유로(EUR), 위안(CNY)을 원화로 즉시 환산합니다. 평↔제곱미터 면적 변환 포함, 무료.">
+<link rel="canonical" href="/fx">
+<meta property="og:type" content="website">
+<meta property="og:title" content="환율 계산기 — 실시간 환율로 원화 환산">
+<meta property="og:description" content="달러·엔화·유로, 실시간 환율이 자동 적용됩니다.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"환율은 어떤 기준으로 적용되나요?","acceptedAnswer":{"@type":"Answer","text":"공개 환율 API의 실시간 시세가 자동으로 적용되며, 은행 매매기준율과 소폭 차이가 있을 수 있습니다. 정확한 거래에는 거래 은행의 고시 환율을 직접 입력해 사용하세요."}},
+{"@type":"Question","name":"엔화는 왜 100엔 기준인가요?","acceptedAnswer":{"@type":"Answer","text":"엔화는 단위가 작아 국내 은행 고시가 관행적으로 100엔당 원화로 표기됩니다. 이 계산기도 같은 기준을 사용하므로 은행 고시 환율을 그대로 입력하면 됩니다."}},
+{"@type":"Question","name":"1평은 몇 제곱미터인가요?","acceptedAnswer":{"@type":"Answer","text":"1평은 3.3058제곱미터입니다. 예를 들어 24평은 약 79.34제곱미터, 84제곱미터는 약 25.4평입니다."}}
+]}
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="index.html"><span class="logo-mark">₩=</span><span>워크데스크<small>WORKDESK</small></span></a>
+    <nav class="nav-links"><a href="index.html">전체 도구</a><a href="index.html#feed">콘텐츠</a><a href="index.html#hire" class="nav-cta">외주 의뢰</a></nav>
+  </div>
+</header>
+
+<section class="landing-hero">
+  <div class="wrap">
+    <span class="crumb"><a href="index.html">워크데스크</a> › 환율 · 평수 계산기</span>
+    <h1>환율 계산기 <span style="font-size:.6em;color:var(--mint)">+ 평수 변환</span></h1>
+    <p>달러·엔화·유로·위안을 실시간 환율로 원화 환산하고, 평↔제곱미터 면적 변환까지. 해외 결제와 부동산 계약 전에 3초만 쓰세요.</p>
+  </div>
+</section>
+
+<section class="section-tight tools-bg">
+  <div class="wrap"><div data-calc="convert"></div></div>
+</section>
+
+<div class="wrap" style="padding:36px 24px 0">
+  <div class="ad-slot ad-banner" style="max-width:940px">AD · 728×90<span class="ad-note">config.js에 애드센스 ID를 넣으면 실제 광고로 바뀝니다</span></div>
+</div>
+
+<section class="section">
+  <div class="wrap seo-body">
+    <h2>환율 볼 때 알아두면 좋은 것</h2>
+    <p>뉴스에 나오는 환율은 보통 <mark>매매기준율</mark>이고, 실제 환전이나 카드 결제에는 여기에 은행·카드사의 스프레드(수수료)가 붙습니다. 해외 직구나 수입 결제 금액을 가늠할 때는 매매기준율 기준으로 계산한 뒤 1~2% 정도 여유를 두면 실제 청구액과 비슷해집니다.</p>
+    <p>수입·수출을 하는 사업자라면 결제 시점의 환율이 마진을 좌우합니다. 견적서를 쓸 때 오늘 환율을 기준으로 원가를 환산해 두고, 환율 변동 가능성을 계약 조건에 반영하는 습관이 안전합니다.</p>
+
+    <h2>평수 변환 빠른 참고표</h2>
+    <ul>
+      <li>10평 = 33.06㎡ · 15평 = 49.59㎡ · 20평 = 66.12㎡</li>
+      <li>24평 = 79.34㎡ · 30평 = 99.17㎡ · 34평 = 112.40㎡</li>
+      <li>59㎡ = 약 17.8평 · 84㎡ = 약 25.4평 · 114㎡ = 약 34.5평</li>
+    </ul>
+    <p>부동산 공고의 전용면적(㎡)과 흔히 말하는 평형은 공급면적 기준이 섞여 있어 체감 크기가 다를 수 있습니다. 계약 전에는 반드시 전용면적 기준으로 환산해 비교하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>여기 나오는 환율로 환전 금액이 정해지나요?</summary><div class="a">아닙니다. 이 계산기의 실시간 환율은 참고용 시장 환율이며, 실제 환전·결제 금액은 거래 은행/카드사의 고시 환율과 수수료에 따라 달라집니다. 정확한 계산이 필요하면 은행 고시 환율을 직접 입력하세요.</div></details>
+      <details><summary>환율이 자동으로 안 바뀌어요.</summary><div class="a">인터넷 연결 상태이거나 파일을 로컬에서 직접 열었을 때는 실시간 갱신이 제한될 수 있습니다. 이 경우 기본값이 표시되며, 환율 입력칸에 오늘 환율을 직접 입력해 사용하면 됩니다.</div></details>
+    </div>
+
+    <h2>면적별 평수 변환 바로 보기</h2>
+    <p>아파트·오피스에서 자주 쓰는 면적을 미리 변환해 두었습니다.</p>
+    <div class="chips-inline">
+      <a href="a/59m2.html">59㎡ 몇 평</a><a href="a/74m2.html">74㎡</a><a href="a/84m2.html">84㎡ 몇 평</a><a href="a/101m2.html">101㎡</a><a href="a/114m2.html">114㎡</a><a href="a/24py.html">24평 ㎡</a><a href="a/30py.html">30평</a><a href="a/34py.html">34평 ㎡</a>
+    </div>
+    <h2>함께 쓰면 좋은 계산기</h2>
+    <div class="related">
+      <a href="vat.html">부가세</a>
+      <a href="loan.html">대출 이자</a>
+      <a href="salary.html">연봉 실수령액</a>
+      <a href="invoice.html">세금계산서</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b>워크데스크</b>일하는 사람의 계산기 허브 · 계산 결과는 참고용입니다.</div>
+    <div><b>바로가기</b><a href="index.html">전체 도구</a> · <a href="privacy.html">개인정보처리방침</a></div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
