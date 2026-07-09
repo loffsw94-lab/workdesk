@@ -18,7 +18,7 @@ window.WORKDESK_CONFIG = {
   /* ② 외주 의뢰 폼 — Formspree(formspree.io) 무료 가입 후
      발급받은 폼 주소를 붙여넣으세요. 접수 내용이 이메일로 도착합니다.
      예: "https://formspree.io/f/abcdwxyz" */
-  FORM_ENDPOINT: "https://formspree.io/f/mrewvare",
+  FORM_ENDPOINT: "",
 
   /* ③ 네이버 뉴스 자동 수집 — 여기가 아니라 Vercel 환경변수에
      NAVER_ID / NAVER_SECRET 두 개를 넣으면 자동으로 켜집니다.
@@ -32,7 +32,7 @@ window.WORKDESK_CONFIG = {
   /* ⑤ 방문자 측정(Google 애널리틱스 GA4) — analytics.google.com에서
      무료 속성 생성 후 측정 ID를 붙여넣으면 방문 통계가 켜집니다.
      예: "G-XXXXXXXXXX" */
-  ANALYTICS_ID: "G-ZT1WVWEXEL",
+  ANALYTICS_ID: "",
 
   /* ⑥ 개인정보처리방침 연락처 (선택) — 입력하면 privacy 페이지의
      보호책임자·문의처가 자동으로 채워집니다. 비워두면 기본 문구가 표시됩니다.
